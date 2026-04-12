@@ -1,3 +1,7 @@
 ﻿{
-
+    "my config":  {
+                      "Keybinds":  false,
+                      "Remove Street Names":  false,
+                      "veecfi config":  true
+                  }
 }
