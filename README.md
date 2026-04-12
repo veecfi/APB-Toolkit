@@ -56,11 +56,7 @@ APB Reloaded Toolkit lets you manage, organise, and apply custom config files to
 
 1. Download the latest release from the [Releases](https://github.com/veecfi/APB-Toolkit/releases) page.
 2. Extract the folder anywhere — a dedicated folder is recommended (e.g. `C:\APB Toolkit\`).
-3. Right-click `APB_Customizer.ps1` → **Run with PowerShell**.
-   - If you see an execution policy error, run this once in PowerShell as Administrator:
-     ```powershell
-     Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-     ```
+3. Double-click `APBToolkit.exe` to launch.
 4. On first launch, go to **Advanced** and verify or set your APB Reloaded directory path, then go to **Settings → Preferences** and click **Save Path**.
 
 ---
@@ -71,7 +67,7 @@ Place your option folders directly inside the toolkit directory:
 
 ```
 APB Toolkit\
-  APB_Customizer.ps1
+  APB_Customizer.exe
   descriptions.json
   presets.json
   settings.json
@@ -93,7 +89,7 @@ Each option folder must contain an `APBGame` and/or `Engine` subfolder following
 
 ## Adding Your Own Options
 
-1. Create a folder next to the script (e.g. `My HUD Fix\`).
+1. Create a folder next to the exe (e.g. `My HUD Fix\`).
 2. Inside it, replicate the APB folder structure:
    ```
    My HUD Fix\
