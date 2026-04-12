@@ -1,4 +1,6 @@
 ﻿{
     "ApbPath":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\APB Reloaded",
-    "DarkMode":  true
+    "DarkMode":  true,
+    "NoSteam":  false,
+    "NoSplash":  true
 }
