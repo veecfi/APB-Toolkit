@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="Icons/APBToolkit.ico" alt="APB Toolkit" width="80" />
 
 # APB Reloaded Toolkit
 
