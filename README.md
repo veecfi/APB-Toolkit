@@ -1,276 +1,187 @@
-<div align="center">
-
-
 # APB Reloaded Toolkit
 
-**The all-in-one config manager, launcher, and GFAC tool for APB Reloaded.**
-
-[![Version](https://img.shields.io/badge/version-2.1.0-blue?style=flat-square)](https://github.com/veecfi/APB-Toolkit/releases)
-[![Platform](https://img.shields.io/badge/platform-Windows-lightgrey?style=flat-square&logo=windows)](https://github.com/veecfi/APB-Toolkit)
-[![PowerShell](https://img.shields.io/badge/PowerShell-5.1-blue?style=flat-square&logo=powershell)](https://github.com/veecfi/APB-Toolkit)
-[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
-
-[**Download Latest**](https://github.com/veecfi/APB-Toolkit/releases/latest) · [**Report Bug**](https://github.com/veecfi/APB-Toolkit/issues) · [**Request Feature**](https://github.com/veecfi/APB-Toolkit/issues)
-
-</div>
+**Version 2.1.9**  
+A all-in-one configuration, launch, and maintenance tool for APB Reloaded.
 
 ---
 
-## ✨ What is this?
+## What It Does
 
-APB Reloaded Toolkit is a borderless WinForms app built in PowerShell that replaces the tedious process of manually copying config files into your APB install. Select cards, set your apply order, load presets, manage GFAC, and launch the game — all from one clean interface with full **dark and light mode** support.
-
-No Python. No dependencies. No install. Just drop it in your configs folder and run.
+APB Reloaded Toolkit lets you manage your APB config files, apply preset configurations, maintain your install, and launch the game — all from one clean sidebar-driven interface. No manual file copying, no digging through folders.
 
 ---
 
-## 🖼️ Interface
+## Features
 
-| Dark Mode | Light Mode |
-|---|---|
-| Borderless dark UI with card grid | Full light theme with proper contrast |
+### Config Options
+- **Import Config** — Import a config folder directly into your APB directory with conflict detection and optional backup
+- **Preset Configs** — Save and load named presets of your selected options. Built-in presets (Default, Performance, High Quality) are always available. User presets show save timestamps and support rename, edit, and delete
+- **Advanced** — Browse all available option cards, select what you want, and apply them. Multi-option cards support sub-selection. Filter by imported/default and search by name
+- **Config Order** — Set the order configs are applied. Drag to reorder, use arrow buttons, send to bottom. Apply in Order respects the sequence
 
-> The interface opens on **Preset Configs** by default. Navigate using the sidebar.
+### Utilities
+- **APB Options** — Launch APB, trigger Steam update check, repair install, uninstall/reinstall
+- **GFAC Options** — Manage GFAC anti-cheat: update, uninstall, reinstall
+- **Other** — Target flags, shortcut creator, additional utilities
 
----
+### Settings
+- **Updates** — Check for new toolkit versions, view changelog
+- **Preferences** — Toggle dark/light theme, set APB install path, backup/restore config files, export/import card descriptions, reset selections, run on startup toggle
 
-## 🗂️ Features
-
-### ⚙️ Config Options
-
-<details>
-<summary><b>Preset Configs</b> — Save and load full config setups</summary>
-
-- Three built-in presets: **Default**, **Performance**, **High Quality**
-- Save your current selection as a named preset
-- Load, Edit, Rename and Delete user presets
-- Shows how many options each preset has saved
-- Loading fully restores all selections — including sub-option choices
-- Built-in presets anchored at the top; yours scroll below
-
-</details>
-
-<details>
-<summary><b>Advanced</b> — Card picker for all your config folders</summary>
-
-- Each folder in the toolkit directory becomes a **card**
-- Click to select (turns blue), click again to deselect
-- Cards with sub-folders open a **drill-down chooser**
-- **Filter pills** — `imported` shows folders you added, `default` shows folders that shipped with the toolkit
-- **Text search** — filter cards by name in real time
-- **Card count** shown top right
-- Overwrite, Backup, -nosteam and -nosplash checkboxes on one row
-- Conflict detection warns when two selected configs overwrite the same file
-- Auto-backup of `APBGame\Config` before applying (when Backup is enabled)
-
-</details>
-
-<details>
-<summary><b>Import Config</b> — Bring in external config folders</summary>
-
-- Browse for any folder — see path, file count, and size before confirming
-- Copied into the toolkit directory automatically
-- Tracked in `imported_folders.json` so the `imported` filter pill works correctly
-
-</details>
-
-<details>
-<summary><b>Config Order</b> — Control exact apply sequence</summary>
-
-- Drag rows up/down to reorder — smooth drag with no flicker
-- `^` move up · `vv` send to bottom · `X` remove and deselect
-- Overwrite, Backup, -nosteam and -nosplash checkboxes mirrored here
-- Activity log shows per-file output: **OK / SKIP / FAIL**
-- Apply order persists across sessions in `settings.json`
-
-</details>
+### Help
+- Full in-app documentation covering every feature
 
 ---
 
-### 🔧 Utilities
+## Getting Started
 
-| Section | Tools |
-|---|---|
-| **APB Options** | Launch/Update · Repair Game · Uninstall · Reinstall |
-| **GFAC Options** | Run Updater · Uninstall (+ TPI folder) · Reinstall |
-| **Other** | Open Game Folder · Open Steam · Target Flags shortcuts |
-
-> Launch/Update and Repair use **APBLauncher.exe** directly — no Steam URI roundtrip.
-> GFAC Uninstall and Reinstall also remove the `TPI` folder alongside `C:\Program Files\GFAC`.
+1. Open the toolkit and go to **Advanced**
+2. Check the APB Reloaded Directory path at the top — it turns green if valid, red if not found
+3. If red, click **Browse** and navigate to your APB install folder (usually `C:\Program Files (x86)\Steam\steamapps\common\APB Reloaded`)
+4. Go to **Settings > Preferences** and click **Save Path** so it loads automatically next time
+5. The **Play APB** button is always visible at the bottom-left of the sidebar
 
 ---
 
-### 🚀 Sidebar
+## Usage
 
-| Button | Behaviour |
-|---|---|
-| **Update APB** | Launches APBLauncher.exe — turns Play yellow until reapplied |
-| **Play APB** | Launches via shortcut and **closes the toolkit** |
+### Applying Config Options
+1. Go to **Config Options > Advanced**
+2. Click cards to select them (they highlight blue). Cards with multiple sub-options show a **Choose** button
+3. Click **Apply Selected** to copy the files to your APB directory
+4. The activity log shows every file copied, skipped, or failed
+5. The progress bar tracks overall progress
 
-Play turns **yellow** after updating (prompts confirmation before launching) and **red** when flagged files are selected.
+### Saving a Preset
+1. Select the options you want in Advanced
+2. Click **Save Preset** in the bottom button row
+3. Give it a name and click Save
+4. It appears under **Your Presets** in Preset Configs with a save timestamp
 
----
+### Loading a Preset
+- **Built-in presets** — Click Load to confirm, then files are copied immediately to APB
+- **User presets** — Click Load to select the matching cards in Advanced, then click Apply Selected
 
-### 🛡️ Safety
-
-Files that trigger GFAC shadowbans are flagged with an **amber warning triangle** on the card. Apply Selected warns before copying any flagged content.
-
-**Safe whitelist:** `.ini` `.ger` `.int` `.apb` `.txt` `.md` · `vivoxvoiceservice.exe`
-
----
-
-### 🎨 Settings
-
-- **Updates** — Version card, Check for Updates, auto-download and relaunch via temp-file swap
-- **Preferences** — Dark/Light toggle · APB path · Backup/Restore · Descriptions Export/Import/Clear · Reset Selections · Open Folder
+### Run on Startup
+Go to **Settings > Preferences** and click **Enable** on the Run on Startup card. The toolkit will launch automatically when Windows starts. Click again to disable.
 
 ---
 
-## 📦 Installation
-
-1. Download the latest release from the [**Releases**](https://github.com/veecfi/APB-Toolkit/releases) page
-2. Extract to a dedicated folder — e.g. `C:\APB Toolkit\`
-3. Run `APBToolkit.exe` — no install, no setup, just launch
-4. Set your APB directory in **Advanced**, then **Settings → Preferences → Save Path**
-
-> **No admin rights required. No installation. No registry changes.**
-> The download comes as a ready-to-run compiled `.exe` — no PowerShell or build steps needed.
-
----
-
-## 🗃️ Folder Structure
+## File Structure
 
 ```
-APB Toolkit\
-  APBToolkit.exe                ← run this to launch the toolkit
-  descriptions.json             ← card descriptions
-  presets.json                  ← saved presets
-  settings.json                 ← app settings
-  imported_folders.json         ← tracks imported folders
-  │
-  ├── Icons\
-  │     APBToolkit.ico          ← window + taskbar icon
-  │
-  ├── Images\
-  │     launch.png  repair.png  gfac.png  ...
-  │
-  ├── Backups\
-  │     AutoBackup_20250101_120000.zip
-  │
-  ├── Default Preset\
-  │     APBGame\Config\DefaultGame.ini
-  │
-  ├── My Custom Config\
-  │     APBGame\Config\DefaultEngine.ini
-  │     Engine\Config\BaseEngine.ini
-  │
-  └── Multi Option Folder\
-        Option A\APBGame\Config\...
-        Option B\APBGame\Config\...
+APB_Customizer.ps1          # Main script
+presets.json                # Saved user presets (auto-created)
+descriptions.json           # Card descriptions (auto-created)
+imported_folders.json       # Tracked imported folders (auto-created)
+settings.json               # App settings (auto-created)
+[Option Folders]/           # Config option subfolders (APBGame/, Engine/ inside)
+Default Preset/             # Built-in preset folder
+Performance Mode Preset/    # Built-in preset folder
+High Quality Preset/        # Built-in preset folder
+Images/                     # Optional PNG images for Utilities tool cards
 ```
 
-> **Reserved folders** (never shown as cards): `APBGame` `Engine` `Icons` `Images` `Backups`
-
 ---
 
-## ➕ Adding Your Own Configs
+## Changelog
 
-1. Create a folder next to the exe — e.g. `My HUD Fix\`
-2. Replicate the APB directory structure inside it:
-   ```
-   My HUD Fix\
-     APBGame\
-       Config\
-         DefaultUI.ini
-   ```
-3. Click **Refresh** in Advanced — your card appears instantly
-4. Select it and click **Apply Selected**
+### v2.1.9
+- Major UI overhaul
+- Redesigned sidebar header with crosshair logo and gradient separator
+- Custom drawn nav icons per section (grid, star, sliders, wrench, gear, circle-?)
+- Preset Config cards redesigned with body/footer split layout, badge border, larger name
+- Preset cards now show save timestamp in footer
+- Preset save format updated to include savedAt metadata (backwards compatible)
+- Hero banner card on Updates tab with crosshair watermark, version badge, status strip
+- Changelog box redesigned with rounded card and custom scrollbar matching Help tab
+- Flagged/unsafe cards changed from amber to crimson red for clearer danger indication
+- Run on Startup option added to Preferences
+- Fixed vertical sidebar separator line not showing on Help, Updates, Preferences tabs
+- Fixed form bottom-right blue border artifact
+- Fixed restore window button overlapping close button
+- Fixed Update APB and Play APB button positioning in fullscreen and windowed modes
+- Fixed non-ASCII bytes in script causing immediate crash on startup
 
-For multiple variants (colour choices, quality levels etc.), create **subfolders** inside your option folder. The toolkit shows a **Choose** button and opens a drill-down chooser.
+### v2.1.0
+- Major release
+- Added imported/default filter pills to Advanced tab
+- Imported folders tracked in imported_folders.json on import
+- Added Overwrite, Backup, -nosteam, -nosplash checkboxes to Config Order tab
+- Config Order activity log shows full file copy output (OK/SKIP/FAIL per file)
+- Config Order list shows individual sub-option paths
+- Apply in Order expanded to handle sub-option paths directly
+- Preset configs now shows option count only
+- Fixed preset Load not restoring all selections
+- Fixed JSON type casting for arrays and booleans
+- Fixed update download path to avoid file-in-use error
+- Fixed update bat file sequence
+- Fixed window button order: Min / Max / Close
+- Fixed window buttons disappearing after theme switch
+- Fixed rounded button corner rectangles
+- Fixed light mode coverage across all panels
+- Fixed null brush crash on startup
+- Fixed Edit Description double-click to close
+- Fixed sub-option cards showing folder path as description fallback
 
----
+### v1.5.5
+- Play APB closes toolkit after launching
+- Launch/Update, Repair, Update APB now use APBLauncher.exe directly
+- GFAC Uninstall/Reinstall also deletes TPI folder
+- Added imported/preset filter pills and text search to Advanced
+- Fixed null brush crash on startup
+- Fixed window button issues
 
+### v1.5.1 - v1.5.4
+- Update APB button added above Play APB
+- Config Order send-to-bottom, X remove button, drag improvements
+- Import Config redesigned with folder info confirmation
+- Conflict detection for overlapping config files
+- Auto-backup before apply when enabled
+- Various bug fixes
 
-## 🚩 Launch Flags
-
-| Flag | Effect |
-|---|---|
-| `-language=1031` | Loads custom localisation files |
-| `-nomovies` | Skips intro movies |
-| `-nosplash` | Skips splash screen |
-| `-nosteam` | Disables Steam integration |
-
-Toggling `-nosteam` or `-nosplash` **immediately updates your desktop shortcut** — no need to click Play.
-
----
-
-## 🖼️ Tool Card Images
-
-Drop PNGs into `Images\` to customise Utilities cards:
-
-| File | Card |
-|---|---|
-| `launch.png` | Launch / Update |
-| `repair.png` | Repair Game |
-| `uninstall.png` | Uninstall APB |
-| `reinstall.png` | Reinstall APB |
-| `gfac.png` | Run GFAC Updater |
-| `gfac_uninstall.png` | Uninstall GFAC |
-| `gfac_reinstall.png` | Reinstall GFAC |
-| `folder.png` | Open Game Folder |
-| `steam.png` | Open Steam |
-| `flags.png` | Default Target Flags |
-| `flags_adv.png` | Advanced Target Flags |
-
----
-
-## 📋 Changelog
-
-> Full changelog available in **Settings → Updates** inside the toolkit.
-
-### v2.1.0 — Current
-- Full dark ↔ light mode with complete theme coverage across all panels and buttons
-- `imported` / `default` filter pills in Advanced (mutually exclusive)
-- Imported folders tracked persistently in `imported_folders.json`
-- Checkboxes (Overwrite, Backup, -nosteam, -nosplash) added to Config Order tab
-- Config Order activity log shows per-file copy output (OK / SKIP / FAIL)
-- Config Order drag rewritten — no flicker, smooth scroll follows dragged row
-- Preset Load fully restores all selections including sub-option choices
-- Update downloads to `%TEMP%`, swaps exe via bat file after process exits
-- Launch/Update, Repair and Update APB use `APBLauncher.exe` directly
-- GFAC Uninstall/Reinstall also removes the `TPI` folder
-- Play APB closes the toolkit after launching
-- Window buttons order fixed: Min / Max / Close
-- Rounded button corners fixed — fully transparent, no background rectangle
-- `Icons\` folder excluded from card list; reserved folders expanded
-- Build script included for compiling with custom icon
-
-### v1.5.x
+### v1.4.2
 - Config Order tab with drag-to-reorder
-- Preset Configs redesign with built-in and user sections
-- Import Config redesign with file info preview
-- Auto-backup before applying
-- Conflict detection between selected configs
-- Update auto-download and relaunch
-- Filter row in Advanced with card count
-- -nosteam and -nosplash checkboxes with live shortcut sync
+- Apply in Order button
+- -nosteam and -nosplash/-nomovies checkboxes
+- Preset Config built-in presets anchored, user presets scrollable
+
+### v1.2.9 - v1.3.0
+- Preset card Edit and Rename buttons
+- Delete confirmation dialog
+- PNG image support for Utilities tool cards
+- Play APB button pinned to sidebar
+- Update APB button
+- Scrollable changelog card
+- Settings sub-navigation (Updates / Preferences)
+- Utilities sub-navigation (APB Options / GFAC Options / Other)
+
+### v1.0.1 - v1.2.0
+- Initial public release
+- Config options card picker with multi-option support
+- Apply Selected copies files to APB directory
+- Activity log, APB path auto-detection
+- Dark/light theme toggle
+- GitHub update checker
+- Backup and restore
+- GFAC management tools
 
 ---
 
-## ⚠️ Disclaimer
+## Requirements
 
-Use of modified game files is at your own risk. This tool only copies files you explicitly select. Always review what you're applying — some configs disable kiosks or streaming in ways that affect gameplay. The GFAC safe file whitelist is maintained conservatively; when in doubt, don't apply flagged files.
+- Windows 10 or 11
+- PowerShell 5.1 or later
+- APB Reloaded installed via Steam
+
+## Running the Script
+
+Right-click `APB_Customizer.ps1` and select **Run with PowerShell**, or run from a PowerShell terminal:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "APB_Customizer.ps1"
+```
 
 ---
 
-## 📄 License
-
-MIT — see [`LICENSE`](LICENSE) for details.
-
----
-
-<div align="center">
-
-Made for the APB community · [veecfi](https://github.com/veecfi)
-
-</div>
+*APB Reloaded Toolkit is an unofficial community tool and is not affiliated with Little Orbit or the APB Reloaded development team.*
