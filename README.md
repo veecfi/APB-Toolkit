@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="Icons/APBToolkit.ico" alt="APB Toolkit" width="80" />
-
 # APB Reloaded Toolkit
 
 **The all-in-one config manager, launcher, and maintenance tool for APB Reloaded.**
