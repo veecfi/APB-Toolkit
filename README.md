@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="Icons/APBToolkit.ico" alt="APB Toolkit" width="80" />
+
 # APB Reloaded Toolkit
 
 **The all-in-one config manager, launcher, and maintenance tool for APB Reloaded.**
@@ -8,8 +10,9 @@
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey?style=flat-square&logo=windows)](https://github.com/veecfi/APB-Toolkit)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1-blue?style=flat-square&logo=powershell)](https://github.com/veecfi/APB-Toolkit)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Server-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/JjxJDys7m4)
 
-[**Download Latest**](https://github.com/veecfi/APB-Toolkit/releases/latest) &nbsp;·&nbsp; [**Report Bug**](https://github.com/veecfi/APB-Toolkit/issues) &nbsp;·&nbsp; [**Request Feature**](https://github.com/veecfi/APB-Toolkit/issues)
+[**Download Latest**](https://github.com/veecfi/APB-Toolkit/releases/latest) &nbsp;·&nbsp; [**Discord**](https://discord.gg/JjxJDys7m4) &nbsp;·&nbsp; [**Report Bug**](https://github.com/veecfi/APB-Toolkit/issues) &nbsp;·&nbsp; [**Request Feature**](https://github.com/veecfi/APB-Toolkit/issues)
 
 </div>
 
@@ -263,6 +266,6 @@ The **Play APB** and **Update APB** buttons are always pinned to the bottom of t
 
 <div align="center">
 
-Made for the APB community &nbsp;·&nbsp; [veecfi](https://github.com/veecfi)
+Made for the APB community &nbsp;·&nbsp; [veecfi](https://github.com/veecfi) &nbsp;·&nbsp; [Discord](https://discord.gg/JjxJDys7m4)
 
 </div>
