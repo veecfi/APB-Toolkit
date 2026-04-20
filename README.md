@@ -1,10 +1,12 @@
 <div align="center">
 
+<img src="Icons/APBToolkit.ico" alt="APB Toolkit" width="80" />
+
 # APB Reloaded Toolkit
 
 **The all-in-one config manager, launcher, and maintenance tool for APB Reloaded.**
 
-[![Version](https://img.shields.io/badge/version-2.1.9-blue?style=flat-square)](https://github.com/veecfi/APB-Toolkit/releases)
+[![Version](https://img.shields.io/badge/version-2.2.5-blue?style=flat-square)](https://github.com/veecfi/APB-Toolkit/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey?style=flat-square&logo=windows)](https://github.com/veecfi/APB-Toolkit)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1-blue?style=flat-square&logo=powershell)](https://github.com/veecfi/APB-Toolkit)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
@@ -185,6 +187,22 @@ The **Play APB** and **Update APB** buttons are always pinned to the bottom of t
 ---
 
 ## Changelog
+
+<details>
+<summary><strong>v2.2.5</strong> — Current</summary>
+
+- Discord sidebar card with live member and online counts via invite API
+- Discord bot launched — `/download`, `/changelog`, `/version`, `/apbstatus`, `/stats`, `/share`, `/getpreset`
+- GitHub webhook integration — new releases auto-post to Discord
+- Preset sharing via Discord bot — upload `presets.json`, bot formats and posts to showcase
+- Opt-in usage statistics — anonymous telemetry to bot database, viewable via `/stats`
+- Run on Startup preference added to Settings
+- Fixed Discord card rendering artifacts and icon cutoff at all DPI scales
+- Fixed stat pill widths to dynamically size around any text length
+- Fixed button spacing consistency across all layout handlers
+
+</details>
+
 
 <details>
 <summary><b>v2.1.9 -- UI Overhaul</b> (current)</summary>
