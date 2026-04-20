@@ -6,7 +6,7 @@
 
 **The all-in-one config manager, launcher, and maintenance tool for APB Reloaded.**
 
-[![Version](https://img.shields.io/badge/version-2.2.5-blue?style=flat-square)](https://github.com/veecfi/APB-Toolkit/releases)
+[![Version](https://img.shields.io/badge/version-2.3.0-blue?style=flat-square)](https://github.com/veecfi/APB-Toolkit/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey?style=flat-square&logo=windows)](https://github.com/veecfi/APB-Toolkit)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1-blue?style=flat-square&logo=powershell)](https://github.com/veecfi/APB-Toolkit)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
@@ -46,7 +46,8 @@ No Python. No dependencies. No install. Just drop `APBToolkit.exe` in your confi
 - Three built-in presets always available: **Default**, **Performance**, **High Quality**
 - Save your own named presets from any selection in Advanced
 - User presets show **save timestamp** in the footer
-- Rename, Edit, Delete user presets from the card footer
+- Rename, Edit, Delete, reorder user presets from the card
+- **Import from URL** — paste any direct link to a `presets.json` to import without downloading
 - Built-in presets load files directly; user presets restore your card selection in Advanced
 
 ### Advanced
@@ -64,6 +65,7 @@ No Python. No dependencies. No install. Just drop `APBToolkit.exe` in your confi
 - Set the exact sequence configs are applied
 - Drag rows to reorder, or use arrow buttons and Send to Bottom
 - **Apply in Order** runs the copy in your custom sequence
+- **Save Order** / **Load Order** — save named order presets and restore them via dropdown
 - Overwrite, Backup, -nosteam, -nosplash checkboxes on the same view
 - Per-file output: OK / SKIP / FAIL in the activity log
 
@@ -90,12 +92,13 @@ No Python. No dependencies. No install. Just drop `APBToolkit.exe` in your confi
 - Full scrollable changelog with custom scrollbar
 
 ### Preferences Tab
-- **Appearance** -- Dark / Light theme toggle
+- **Appearance** -- Dark / Light theme toggle (also accessible via moon/sun icon in the header)
 - **APB Install Path** -- Browse, Save, Reset
 - **Config Backup** -- Zip your APBGame\Config with timestamp; restore from any backup zip
 - **Card Descriptions** -- Export, Import, or Clear all descriptions
 - **General** -- Reset selections, open script folder
 - **Run on Startup** -- Adds or removes a Windows startup registry entry
+- **Usage Statistics** -- Opt-in anonymous telemetry (version + actions only)
 
 </details>
 
@@ -125,6 +128,7 @@ APB Toolkit\
   descriptions.json               <- auto-created
   presets.json                    <- auto-created, includes save timestamps
   settings.json                   <- auto-created
+  order_presets.json              <- auto-created when you save an order preset
   imported_folders.json           <- auto-created
   Images\                         <- optional PNGs for Utilities tool cards
   Backups\                        <- auto-created on backup
@@ -189,7 +193,36 @@ The **Play APB** and **Update APB** buttons are always pinned to the bottom of t
 ## Changelog
 
 <details>
-<summary><strong>v2.2.5</strong> — Current</summary>
+<summary><strong>v2.3.0</strong> — Current</summary>
+
+**UI Improvements**
+- Update notification banner — shows across all tabs when a new version is available, click to update, dismiss with X
+- Confirmation dialog before Apply Selected showing the full list of options that will be applied
+- Auto-backup before every apply — zips `APBGame\Config` to Backups folder with timestamp automatically
+- Preset import from URL — paste any direct link to a `presets.json` (GitHub raw, Discord CDN) to import instantly
+- Fuzzy search on option cards — partial/out-of-order matching with accent-highlighted matched text
+- Hover tooltip on option cards — 600ms delay then shows the card's description in a floating panel
+- Recently applied section on Advanced tab — last 5 apply sessions with timestamp and option names
+- Preset reordering — up/down arrow buttons on every user preset card
+- Light/dark mode toggle button in the header bar (moon/sun icon) for instant switching
+- Animated tab transitions — accent sweep line plays across content area top on every nav click
+- Settings panel redesigned — glass gradient cards, cleaner section headers, tighter spacing
+- Config Order save/load presets — save named order presets and restore them via dropdown (`order_presets.json`)
+
+**Discord Bot**
+- Official Discord bot launched with `/download`, `/changelog`, `/version`, `/apbstatus`, `/stats`, `/share`, `/getpreset`
+- New commands: `/bug` modal form, `/compare`, `/random`, `/mypresets`, `/leaderboard`, `/setup`
+- GitHub webhook — new releases auto-post to `#latest-release` with download embed
+- Weekly stats digest — every Monday posts active users, version chart, top options to `#stats`
+- Staff thread commands — `!fix`, `!investigating`, `!wontfix`, `!duplicate` update bug report status
+- Auto-welcome DM — new members receive a quick start guide on join
+- Milestone announcements — bot posts when toolkit hits 100, 500, 1000+ downloads
+- Opt-in usage statistics — anonymous telemetry viewable via `/stats`
+
+</details>
+
+<details>
+<summary><strong>v2.2.5</strong></summary>
 
 - Discord sidebar card with live member and online counts via invite API
 - Discord bot launched — `/download`, `/changelog`, `/version`, `/apbstatus`, `/stats`, `/share`, `/getpreset`
@@ -205,7 +238,7 @@ The **Play APB** and **Update APB** buttons are always pinned to the bottom of t
 
 
 <details>
-<summary><b>v2.1.9 -- UI Overhaul</b> </summary>
+<summary><b>v2.1.9 -- UI Overhaul</b> (current)</summary>
 
 - Redesigned sidebar header with crosshair logo and gradient separator
 - Custom drawn nav icons per section (grid, star, sliders, wrench, gear, circle)
@@ -273,6 +306,29 @@ The **Play APB** and **Update APB** buttons are always pinned to the bottom of t
 - Play APB and Update APB pinned to sidebar
 
 </details>
+
+---
+
+## Discord Bot
+
+The official APB Toolkit Discord bot is live on the server. Available commands:
+
+| Command | Description |
+|---|---|
+| `/download` | Latest release with download link |
+| `/changelog` | Recent changelogs |
+| `/version` | Check if you're up to date |
+| `/apbstatus` | APB server status + live player count |
+| `/stats` | Toolkit usage statistics |
+| `/share` | Share a preset from your `presets.json` |
+| `/getpreset <id>` | Download a shared preset |
+| `/compare <a> <b>` | Diff two shared presets |
+| `/random` | Get a random community preset |
+| `/mypresets` | Your shared presets and download counts |
+| `/leaderboard` | Most applied options and downloaded presets |
+| `/bug` | Submit a bug report via modal form |
+
+**Join the server:** [discord.gg/JjxJDys7m4](https://discord.gg/JjxJDys7m4)
 
 ---
 
