@@ -205,7 +205,7 @@ The **Play APB** and **Update APB** buttons are always pinned to the bottom of t
 
 
 <details>
-<summary><b>v2.1.9 -- UI Overhaul</b> (current)</summary>
+<summary><b>v2.1.9 -- UI Overhaul</b> </summary>
 
 - Redesigned sidebar header with crosshair logo and gradient separator
 - Custom drawn nav icons per section (grid, star, sliders, wrench, gear, circle)
