@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="https://apbtoolkit.com/assets/logo.png" alt="APB Toolkit" width="80"/>
-
 # APB Toolkit
 
 **Cloud-connected configuration manager for APB Reloaded**
